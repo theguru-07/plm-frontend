@@ -8,9 +8,9 @@ const Navbar = () => {
     const [q, setQ] = useState("");
 
     const navLinkClass = ({ isActive }) =>
-    `px-3 py-2 rounded-md text-sm md:text-base transition ${
+    `px-3 py-2 rounded-md text-sm md:text-base transition-transform duration-300 hover:scale-[1.25] ${
       isActive
-        ? "text-gray-900 bg-orange-500 text-white rounded-[5rem]"
+        ? "text-gray-900 bg-blue-500 text-white rounded-[5rem]"
         : "text-gray-700 hover:text-gray-900"
     }`;
 
@@ -39,13 +39,19 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Center: Nav links (desktop)
-          <nav className="hidden md:flex items-center gap-2 lg:gap-6 whitespace-nowrap">
+          {/* Center: Nav links (desktop) */}
+          <nav className="hidden md:flex items-center gap-1 lg:gap-6 whitespace-nowrap">
             <NavLink to="/" className={navLinkClass}>
               Home
             </NavLink>
-            <NavLink to="/products" className={navLinkClass}>
-              Shop
+            <NavLink to="/buy" className={navLinkClass}>
+              Buy
+            </NavLink>
+            <NavLink to="/rent" className={navLinkClass}>
+              Rent
+            </NavLink>
+            <NavLink to="/sell" className={navLinkClass}>
+              Sell
             </NavLink>
             <NavLink to="/about" className={navLinkClass}>
               About Us
@@ -53,7 +59,7 @@ const Navbar = () => {
             <NavLink to="/contact" className={navLinkClass}>
               Contact
             </NavLink>
-          </nav> */}
+          </nav>
 
           {/* Right: Search + Sign In (desktop) */}
           <div className="hidden md:flex items-center gap-3">
@@ -63,13 +69,13 @@ const Navbar = () => {
                 type="search"
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
-                placeholder="Search MarketPlace..."
-                className="w-56 lg:w-72 rounded-full border border-gray-200 pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:border-orange-500"
+                placeholder="Search City, property type, budget..."
+                className="w-56 lg:w-72 rounded-full border border-gray-200 pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:border-blue-500"
               />
             </form>
             <Link
               to="/signin"
-              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm font-medium text-gray-800 hover:border-orange-500 hover:text-orange-600 transition whitespace-nowrap"
+              className="inline-flex items-center rounded-full border border-gray-200 px-4 py-2 text-sm font-medium text-gray-800 hover:border-blue-500 hover:text-blue-600 transition whitespace-nowrap"
             >
               Sign In
             </Link>
@@ -98,11 +104,11 @@ const Navbar = () => {
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder="Search products"
-                className="w-full rounded-md border border-gray-200 pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:border-orange-500"
+                className="w-full rounded-md border border-gray-200 pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:border-blue-500"
               />
             </form>
 
-            {/* <nav className="flex flex-col">
+            <nav className="flex flex-col">
               <NavLink
                 onClick={() => setOpen(false)}
                 to="/"
@@ -113,10 +119,24 @@ const Navbar = () => {
               </NavLink>
               <NavLink
                 onClick={() => setOpen(false)}
-                to="/products"
+                to="/buy"
                 className={navLinkClass}
               >
-                Shop
+                Buy
+              </NavLink>
+              <NavLink
+                onClick={() => setOpen(false)}
+                to="/rent"
+                className={navLinkClass}
+              >
+                Rent
+              </NavLink>
+              <NavLink
+                onClick={() => setOpen(false)}
+                to="/sell"
+                className={navLinkClass}
+              >
+                Sell
               </NavLink>
               <NavLink
                 onClick={() => setOpen(false)}
@@ -132,12 +152,12 @@ const Navbar = () => {
               >
                 Contact
               </NavLink>
-            </nav> */}
+            </nav>
 
             <Link
               to="/signin"
               onClick={() => setOpen(false)}
-              className="inline-flex w-full items-center justify-center rounded-md border border-gray-200 px-4 py-2 text-sm font-medium text-gray-800 hover:border-orange-500 hover:text-orange-600 transition"
+              className="inline-flex w-full items-center justify-center rounded-md border border-gray-200 px-4 py-2 text-sm font-medium text-gray-800 hover:border-blue-500 hover:text-blue-600 transition"
             >
               Sign In
             </Link>
