@@ -1,8 +1,9 @@
 import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { Routes } from 'react-router-dom'
-import HomePage from './pages/HomePage.jsx'
-import SigninPage from './pages/SigninPage.jsx'
+import HomePage from './pages/HomePage'
+import SigninPage from './pages/SigninPage'
+
 
 const App = () => {
   return (
